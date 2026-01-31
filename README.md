@@ -28,8 +28,6 @@ These inverters create two complementary internal nodes:
 
 This feedback structure ensures data retention and stability during the hold state.
 
----
-
 ### 2. Access Transistors (M5 and M6)
 
 These NMOS transistors connect the internal nodes **Q** and **Q̅** to the bit lines:
@@ -38,7 +36,7 @@ These NMOS transistors connect the internal nodes **Q** and **Q̅** to the bit l
 - **BLB (Bit Line Bar / Complement)**  
 - Controlled by the **Word Line (WL)**
 
-#### Operation
+### Operation
 
 - **WL = HIGH** → M5 and M6 turn **ON**  
   The cell is connected to the bit lines for read or write operation.
