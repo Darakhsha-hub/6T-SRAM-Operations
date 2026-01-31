@@ -12,20 +12,20 @@ The conventional 6-transistor (6T) SRAM cell consists of six MOSFETs arranged to
 **Transistor Composition**<br>
 The six transistors are divided into three functional groups: <br>
 **1. Storage Inverters (M1, M2, M3, M4)** <br>
-These four transistors form two cross-coupled CMOS inverters:
-* M3 and M4 (PMOS Pull-Up Transistors) <br>
- Connected to VDD, they pull the internal storage nodes high when required. <br>
- * M1 and M2 (NMOS Pull-Down Transistors) <br>
- Connected to ground, they pull the storage nodes low. <br>
- These inverters create two complementary internal nodes: <br>
- * Q → Stores the actual data bit <br>
- * Q̅ (Q-bar) → Stores the inverted value <br>
- This feedback structure ensures data retention and stability during the hold state. <br>
+ These four transistors form two cross-coupled CMOS inverters:
+ * M3 and M4 (PMOS Pull-Up Transistors) <br>
+  Connected to VDD, they pull the internal storage nodes high when required. <br>
+  * M1 and M2 (NMOS Pull-Down Transistors) <br>
+  Connected to ground, they pull the storage nodes low. <br>
+  These inverters create two complementary internal nodes: <br>
+  * Q → Stores the actual data bit <br>
+  * Q̅ (Q-bar) → Stores the inverted value <br>
+  This feedback structure ensures data retention and stability during the hold state. <br>
 **2. Access Transistors (M5 and M6)** <br>
- These NMOS transistors connect the internal nodes Q and Q̅ to the bit lines: <br>
- * BL (Bit Line) <br>
- * BLB (Bit Line Bar / Complement) <br>
-* They are controlled by the Word Line (WL) <br>
+  These NMOS transistors connect the internal nodes Q and Q̅ to the bit lines: <br>
+  * BL (Bit Line) <br>
+  * BLB (Bit Line Bar / Complement) <br>
+ * They are controlled by the Word Line (WL) <br>
 **Operation:** <br>
 * WL = HIGH → M5 and M6 turn ON <br>
 The cell is connected to the bit lines for read or write operation <br>
