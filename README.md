@@ -21,7 +21,7 @@ These four transistors form two cross-coupled CMOS inverters:
  * Q → Stores the actual data bit <br>
  * Q̅ (Q-bar) → Stores the inverted value <br>
  This feedback structure ensures data retention and stability during the hold state. <br>
- **2. Access Transistors (M5 and M6)** <br>
+**2. Access Transistors (M5 and M6)** <br>
  These NMOS transistors connect the internal nodes Q and Q̅ to the bit lines: <br>
  * BL (Bit Line) <br>
  * BLB (Bit Line Bar / Complement) <br>
