@@ -13,7 +13,6 @@ The conventional 6-transistor (6T) SRAM cell consists of six MOSFETs arranged to
 The six transistors are divided into three functional groups: <br>
 **1. Storage Inverters (M1, M2, M3, M4)** <br>
 These four transistors form two cross-coupled CMOS inverters: <br>
-
 - M3 and M4 (PMOS Pull-Up Transistors) <br>
  Connected to VDD, they pull the internal storage nodes high when required. <br>
  
