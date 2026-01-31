@@ -18,20 +18,16 @@ These four transistors form two cross-coupled CMOS inverters:
  * M1 and M2 (NMOS Pull-Down Transistors) <br>
  Connected to ground, they pull the storage nodes low. <br>
  These inverters create two complementary internal nodes: <br>
- 
- - Q → Stores the actual data bit <br>
- - Q̅ (Q-bar) → Stores the inverted value <br>
+ * Q → Stores the actual data bit <br>
+ * Q̅ (Q-bar) → Stores the inverted value <br>
  This feedback structure ensures data retention and stability during the hold state. <br>
  **2. Access Transistors (M5 and M6)** <br>
  These NMOS transistors connect the internal nodes Q and Q̅ to the bit lines: <br>
- 
-  - BL (Bit Line) <br>
-  - BLB (Bit Line Bar / Complement) <br>
-- They are controlled by the Word Line (WL) <br>
+ * BL (Bit Line) <br>
+ * BLB (Bit Line Bar / Complement) <br>
+* They are controlled by the Word Line (WL) <br>
 **Operation:** <br>
-
-- WL = HIGH → M5 and M6 turn ON <br>
+* WL = HIGH → M5 and M6 turn ON <br>
 The cell is connected to the bit lines for read or write operation <br>
-
-- WL = LOW → M5 and M6 turn OFF <br>
+* WL = LOW → M5 and M6 turn OFF <br>
 The cell is isolated and remains in hold mode <br>
