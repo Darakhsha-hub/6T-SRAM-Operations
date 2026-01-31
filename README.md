@@ -9,9 +9,9 @@ SRAM is widely preferred in performance-critical applications such as CPU cache 
 # 6T SRAM Cell Structure
 The conventional 6-transistor (6T) SRAM cell consists of six MOSFETs arranged to form a stable and high-speed memory storage element. It is based on a bistable latch configuration created using two cross-coupled CMOS inverters, which allows the cell to store one bit of data as long as power is supplied. <br>
 ![Conventional 6T SRAM Cell Structure](Schematics/Conventional-6T-SRAM-cell.png)
-**Transistor Composition**<br>
+### Transistor Composition
 The six transistors are divided into three functional groups: <br>
-### 1. Storage Inverters (M1, M2, M3, M4)
+#### 1. Storage Inverters (M1, M2, M3, M4)
 These four transistors form two cross-coupled CMOS inverters:
 - **M3 and M4 (PMOS Pull-Up Transistors)**  
   Connected to VDD, they pull the internal storage nodes high when required.
@@ -22,13 +22,13 @@ These inverters create two complementary internal nodes:
  - **Q̅ (Q-bar)** → Stores the inverted value  
 This feedback structure ensures data retention and stability during the hold state.
 
-### 2. Access Transistors (M5 and M6)
+#### 2. Access Transistors (M5 and M6)
 These NMOS transistors connect the internal nodes **Q** and **Q̅** to the bit lines:
 - **BL (Bit Line)**  
 - **BLB (Bit Line Bar / Complement)**  
 - Controlled by the **Word Line (WL)**
 
-### Operation
+#### Operation
 
 - **WL = HIGH** → M5 and M6 turn **ON**  
   The cell is connected to the bit lines for read or write operation.
