@@ -32,9 +32,11 @@ These NMOS transistors connect the internal nodes **Q** and **Q̅** to the bit l
 - **BLB (Bit Line Bar / Complement)**  
 - Controlled by the **Word Line (WL)**
 
-#### Operation
+# Operations
+### Read Operation
+During the read operation, **the word line (WL) is set to logic ‘1’**, which turns ON the access transistors **M5 and M6**. This connects the internal storage nodes Q and Q̅ to the bit lines BL and BLB, which act as output lines during read.
 
-- **WL = HIGH** → M5 and M6 turn **ON**  
-  The cell is connected to the bit lines for read or write operation.
-- **WL = LOW** → M5 and M6 turn **OFF**  
-  The cell is isolated and remains in hold mode.
+Before reading, **both BL and BLB are precharged to VDD**.
+If the stored value is **Q = 1 and Q̅ = 0**, then the node connected to **BL remains at a higher voltage**, and there is no significant discharge on BL. However, since **Q̅ = 0**, a discharge path is created through the pull-down NMOS transistor and access transistor, causing **BLB to slightly discharge due to bit-line capacitance**.
+
+This creates a **small voltage difference between BL and BLB**. The sense amplifier detects this voltage difference and acts as a comparator to determine the stored data. If BLB voltage decreases with respect to BL, the **sense amplifier** interprets the stored value as logic ‘1’. Thus, the data is successfully read from the SRAM cell without disturbing its stored value.
