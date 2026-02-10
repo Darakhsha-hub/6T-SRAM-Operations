@@ -40,3 +40,13 @@ Before reading, **both BL and BLB are precharged to VDD**.
 If the stored value is **Q = 1 and Q̅ = 0**, then the node connected to **BL remains at a higher voltage**, and there is no significant discharge on BL. However, since **Q̅ = 0**, a discharge path is created through the pull-down NMOS transistor and access transistor, causing **BLB to slightly discharge due to bit-line capacitance**.
 
 This creates a **small voltage difference between BL and BLB**. The sense amplifier detects this voltage difference and acts as a comparator to determine the stored data. If BLB voltage decreases with respect to BL, the **sense amplifier** interprets the stored value as logic ‘1’. Thus, the data is successfully read from the SRAM cell without disturbing its stored value.
+
+#### Netlist
+The LTspice netlist models a 6T SRAM cell using PTM 32 nm NMOS and PMOS devices.
+Cross-coupled inverters store the data, while access transistors controlled by the
+word line (WL) connect the cell to the bit lines.
+
+BL and BLB are precharged to VDD and small capacitors are added to observe bit-line
+discharge during read operation. The initial condition is set as Q = 0 and QB = 1.
+The read operation is verified by the voltage difference between BL and BLB.
+**Netlist**: [6T_SRAM_Read_Operation.txt](./Netlist/Read.txt)
