@@ -49,4 +49,5 @@ word line (WL) connect the cell to the bit lines.
 BL and BLB are precharged to VDD and small capacitors are added to observe bit-line
 discharge during read operation. The initial condition is set as Q = 0 and QB = 1.
 The read operation is verified by the voltage difference between BL and BLB.
+
 **Netlist**: [6T_SRAM_Read_Operation.txt](./Netlist/Read.txt)
