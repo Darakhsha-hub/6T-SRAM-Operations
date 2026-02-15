@@ -53,7 +53,8 @@ The read operation is verified by the voltage difference between BL and BLB.
 **Netlist**: [6T_SRAM_Read_Operation.txt](./Netlist/Read.txt)
 
 #### Waveform
-![Read Operation Waveform](Schematics/Read.png)
+![Read Operation Waveform](Waveforms/Read.png)
+
 During the read operation, the SRAM cell first stays in the hold state when **WL = 0**. In this condition, the access transistors are OFF, so the internal nodes **Q** and **QB** are isolated from the bit lines and the stored data remains stable.
 
 Before enabling the word line, the bit lines are precharged. When **PRE = 0**, the precharge PMOS transistors turn ON and charge both *BL* and *BLB* to *VDD*. After precharging, ***PRE*** goes HIGH to turn OFF the precharge path.
