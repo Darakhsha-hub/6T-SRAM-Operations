@@ -51,3 +51,15 @@ discharge during read operation. The initial condition is set as Q = 0 and QB = 
 The read operation is verified by the voltage difference between BL and BLB.
 
 **Netlist**: [6T_SRAM_Read_Operation.txt](./Netlist/Read.txt)
+
+#### Waveform
+![Read Operation Waveform](Schematics/Read.png)
+During the read operation, the SRAM cell first stays in the hold state when **WL = 0**. In this condition, the access transistors are OFF, so the internal nodes **Q** and **QB** are isolated from the bit lines and the stored data remains stable.
+
+Before enabling the word line, the bit lines are precharged. When **PRE = 0**, the precharge PMOS transistors turn ON and charge both *BL* and *BLB* to *VDD*. After precharging, ***PRE*** goes HIGH to turn OFF the precharge path.
+
+When **WL = 1**, the access transistors turn ON and connect the internal storage nodes to the bit lines. If the stored data is *Q = 0* and *QB = 1*, the bit line connected to the ‘0’ node starts discharging slightly through the pull-down NMOS transistor, while the other bit line remains near **VDD**.
+
+This creates a small voltage difference between BL and BLB. The waveform shows this differential voltage ***(BL − BLB)***, which is sensed by the sense amplifier to determine the stored data.
+
+The discharge slope depends on the access transistor size and bit line capacitance. Larger capacitance slows the discharge, while stronger access transistors increase the discharge speed.
