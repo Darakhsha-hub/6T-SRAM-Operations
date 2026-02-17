@@ -64,3 +64,10 @@ When **WL = 1**, the access transistors turn ON and connect the internal storage
 This creates a small voltage difference between BL and BLB. The waveform shows this differential voltage ***(BL − BLB)***, which is sensed by the sense amplifier to determine the stored data.
 
 The discharge slope depends on the access transistor size and bit line capacitance. Larger capacitance slows the discharge, while stronger access transistors increase the discharge speed.
+
+### Write Operation
+During the write operation, the word line (WL) is set to logic ‘1’, which turns ON the access transistors M5 and M6. This connects the internal storage nodes Q and Q̅ to the bit lines BL and BLB, which act as input lines during write.
+
+To write a value, the bit lines are driven externally. For example, to write Q = 1 and Q̅ = 0, BL is forced to VDD and BLB is forced to 0. Since WL is high, these voltages are directly applied to the internal nodes. The stronger write drivers overpower the previous stored value and force the cross-coupled inverters to flip to the new state.
+
+Once the data is written, WL is set back to logic ‘0’, which turns OFF the access transistors and disconnects the cell from the bit lines. The new value is then maintained by the positive feedback of the two inverters. Thus, the data is successfully written into the SRAM cell.
