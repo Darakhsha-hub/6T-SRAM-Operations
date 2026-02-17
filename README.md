@@ -71,3 +71,10 @@ During the write operation, the word line (WL) is set to logic ‘1’, which tu
 To write a value, the bit lines are driven externally. For example, to write Q = 1 and Q̅ = 0, BL is forced to VDD and BLB is forced to 0. Since WL is high, these voltages are directly applied to the internal nodes. The stronger write drivers overpower the previous stored value and force the cross-coupled inverters to flip to the new state.
 
 Once the data is written, WL is set back to logic ‘0’, which turns OFF the access transistors and disconnects the cell from the bit lines. The new value is then maintained by the positive feedback of the two inverters. Thus, the data is successfully written into the SRAM cell.
+
+#### Netlist
+In the netlist, six transistors are used — four transistors form two cross-coupled inverters (pull-up PMOS and pull-down NMOS), and two NMOS transistors act as access transistors controlled by the Word Line (WL). The channel length (L) is kept at 32nm as per technology, while the widths (W) are chosen carefully for proper write operation. Typically, the pull-down NMOS is sized larger than the pull-up PMOS for stability, and the access transistor size is selected to be strong enough to overwrite the stored data during write.
+
+The code defines the transistor connections using drain, gate, source, and bulk nodes, along with W and L values. Voltage sources are defined for VDD, WL pulse, and complementary bit lines (BL and BLB) to perform the write operation. A transient analysis (.tran) command is used to observe waveform behavior over time.
+
+**Netlist**: [6T_SRAM_Write_Operation.txt](./Netlist/Write.txt)
